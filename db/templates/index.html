@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Project Index</h1>
+
+<ul class="projects">
+    {% for project in projects %}
+    <li>{{ project.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

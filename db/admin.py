@@ -7,11 +7,18 @@ class ProjectImageInline(admin.StackedInline):
 
 class ProjectAdmin(admin.ModelAdmin):
     inlines = [ProjectImageInline]
-    list_display = ('name', 'year')
-    list_filters = ('year')
+    list_display = ('name', 'type', 'year', 'capacity',)
+    list_filter = ('type', 'tags', 'authors',)
+    search_fields = ['name']
+    filter_horizontal = ('tags', 'authors', )
+
+class AuthorAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
-admin.site.register(models.Author)
+class TagAdmin(admin.ModelAdmin):
+    search_fields = ['name']
+
+admin.site.register(models.Author, AuthorAdmin)
 admin.site.register(models.Reference)
-admin.site.register(models.Tag)
+admin.site.register(models.Tag, TagAdmin)
 admin.site.register(models.Project, ProjectAdmin)

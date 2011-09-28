@@ -1,4 +1,7 @@
 *~
 *.swp
 *.pyc
+*.cnf
+media/*
+static/admin/*
 settings.py
