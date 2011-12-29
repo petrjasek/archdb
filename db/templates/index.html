@@ -3,9 +3,13 @@
 {% block content %}
 <h1>Project Index</h1>
 
-<ul class="projects">
-    {% for project in projects %}
-    <li>{{ project.name }}</li>
-    {% endfor %}
-</ul>
+<ol class="projects">
+    {% for project in projects %}{% if project.images.all.0.image.url %}
+    <li>
+    <div class="img-wrapper"><img src="{{ project.images.all.0.image.url }}" width="200" /></div>
+        <h2>{{ project.name }}</h2>
+        <address class="year">{% if project.year %}in {{ project.year }}{% endif %}</address>
+    </li>
+    {% endif %}{% endfor %}
+</ol>
 {% endblock %}
