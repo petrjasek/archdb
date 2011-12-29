@@ -1,8 +1,8 @@
 import os
 import sys
 
-sys.path.append('/home/petr/dev')
-sys.path.append('/home/petr/dev/archdb')
+sys.path.append('/var/www/')
+sys.path.append('/var/www/archdb')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'archdb.settings'
 
