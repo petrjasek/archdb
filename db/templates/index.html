@@ -1,15 +1,21 @@
 {% extends "layout.html" %}
 
+{% load thumbnail %}
+
 {% block content %}
 <h1>Project Index</h1>
 
 <ol class="projects">
-    {% for project in projects %}{% if project.images.all.0.image.url %}
+    {% for project in projects %}
     <li>
-    <div class="img-wrapper"><img src="{{ project.images.all.0.image.url }}" width="200" /></div>
+        <div class="img-wrapper">
+            {% thumbnail project.images.all.0.image "150x150" crop="center" as img %}
+            <img src="{{ img.url }}" width="{{ img.width }}" height="{{ img.height }}" alt="" />
+            {% endthumbnail %}
+        </div>
         <h2>{{ project.name }}</h2>
         <address class="year">{% if project.year %}in {{ project.year }}{% endif %}</address>
     </li>
-    {% endif %}{% endfor %}
+    {% endfor %}
 </ol>
 {% endblock %}

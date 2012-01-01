@@ -1,0 +1,51 @@
+.projects {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 1%;
+    width: 4200px;
+    overflow: hidden;
+}
+
+.projects li {
+    float: left;
+    width: 200px;
+    overflow: hidden;
+    margin: 0 5px 5px 0;
+    padding: 0;
+    position: relative;
+}
+
+.projects .img-wrapper {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects .img-wrapper img {
+    position: absolute;
+    bottom: 0;
+}
+
+.projects h2 {
+    margin: 0;
+    padding: 3px;
+    font-size: 0.8em;
+    font-family: serif;
+    font-weight: normal;
+    line-height: 1em;
+    height: 2em;
+    background-color: #ccc;
+}
+
+.projects address {
+    display: block;
+    margin: 0 0 5px;
+    padding: 3px;
+    font-size: 0.7em;
+    font-style: normal;
+}
+
+@media print {
+    .projects li h2 { background-color: #ccc; }
+}
